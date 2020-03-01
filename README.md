@@ -1,6 +1,6 @@
 Project
 -------
-Bannerji (shortened for "Banner Emoji")
+Bannerji (shortened from "Banner Emoji")
 
 Project Description
 --------------------
