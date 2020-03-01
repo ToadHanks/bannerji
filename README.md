@@ -10,6 +10,10 @@ Author
 -------
 Mihir Patel
 
+Collaboration
+--------------
+[Muan](https://github.com/muan/emojilib)
+
 Status
 ------
 Prototype
