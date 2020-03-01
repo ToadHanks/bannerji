@@ -64,16 +64,3 @@ plotMyEmojis <<- function(traits) { # add option for , plotLayout, further custo
 plotMyEmojis(mytraits)
 
 #---------------------------------------------------------------------------------------------------------------------
-
-text <- "My Very Enthusiastic Mother Just Served Us Noodles!"
-gsub('(.{2})', "\\1:", text, perl = T)
-
-library(dplyr)
-str_reverse<-function(x){
-  strsplit(x,split='')[[1]] %>% rev() %>% paste(collapse = "") 
-}
-
-text2<-str_reverse(text)
-text3<-gsub('(.{2})', "\\1:", text2, perl = T)
-str_reverse(text3)
-
