@@ -1,17 +1,17 @@
 {
-  "Happy": {
+  "HAPPY": {
     "keywords": ["happy", "jolly", "joy"],
     "char": "😃"
   },
-  "Angel": {
+  "ANGEL": {
     "keywords": ["angel", "innocent", "heaven"],
     "char": "😇"
   },
-  "Curious": {
+  "CURIOUS": {
     "keywords": ["curious", "bug", "naturelover", "seeker"],
     "char": "🐛"
   },
-  "American": {
+  "AMERICAN": {
     "keywords": ["american", "usa", "usflag", "americanflag"],
     "char": "🇺🇸"
   }
