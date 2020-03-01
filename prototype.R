@@ -4,11 +4,6 @@ library(igraph)
 #------------------------------------------------------------------- Data -----------------------------------------
 mytraits <- c("happy", "angel", "curious", "american")
 
-toupper(mytraits)
-
-emoji_json_file <- "https://raw.githubusercontent.com/ToadHanks/urmojis/master/traitslib/mytraits.json" #link
-json_data <- rjson::fromJSON(base::paste(base::readLines(emoji_json_file), collapse = "")) #read line by line make
-
 #------------------------------------------------------------------- Viewer---------------------------------------
 #The diplay/view function wrapped
 displayTraits <<- function(){
@@ -20,7 +15,7 @@ displayTraits <<- function(){
   emo_lib <- base::unlist(base::lapply(json_data,function(x){ x$char })) #unlisted json
   return(base::data.frame(EMOJI= emo_lib))
 }
-displayTraits()
+#displayTraits()
 
 #------------------------------------------------------------ Traits to emojis ------------------------------------------
 
@@ -40,11 +35,13 @@ get_emoji_from_traits <<- function(a_trait) {
 
 plotMyEmojis <<- function(traits) { # add option for , plotLayout, further customizing options colour, fonts, typeface etc.
   
+  traits <- base::toupper(traits)
+  
   #try catch for min length of traits, make it 2 above and it's chracter
   
   dna_strand <- "🧬"
   emoji_bag <- c()
-  for(i in seq(traits)){
+  for(i in base::seq(traits)){
     emoji_bag <- c(emoji_bag, get_emoji_from_traits(traits[i])) #namespace here is custom function names
   }
   emoji_bag <- base::rbind(emoji_bag, base::matrix(dna_strand, ncol= base::length(emoji_bag)))
@@ -70,7 +67,9 @@ plotMyEmojis <<- function(traits) { # add option for , plotLayout, further custo
 #plotMyEmojis(mytraits)
 
 #-------------------------------------------------------- Recommendation ---------------------------------------
-traitsLookup <<- function(){ 
+
+traitsLookup <<- function(){
+  
   #TRY CATCH HERE FOR LINK VERIFICATION!!!
   emoji_json_file <- "https://raw.githubusercontent.com/ToadHanks/urmojis/master/traitslib/mytraits.json" #link
   json_data <- rjson::fromJSON(base::paste(base::readLines(emoji_json_file), collapse = "")) #read line by line make
@@ -82,11 +81,19 @@ traitsLookup <<- function(){
   fourth_key <- base::readline(prompt= "Fourth keyword: ");}
   
   keys_bag <- c(first_key,second_key,third_key,fourth_key)
+  dictionary_keywords <- c()
   
+  for(i in base::seq(keys_bag)){
+    find_keys_in_lib <- base::lapply(json_data, function(ch) base::grep(keys_bag[i], ch))
+    if(TRUE %in%base::sapply(find_keys_in_lib, function(x) base::length(x) > 0)){
+      find_truth <- base::sapply(find_keys_in_lib, function(x) base::length(x) > 0)
+      dictionary_keywords <- c(dictionary_keywords, names(find_truth[find_truth==TRUE]))
+    }
+  }
   
-  
-  #return() Recommendation
+  plotMyEmojis(base::toupper(dictionary_keywords))
 }
 
-traitsLookup()
+#traitsLookup()
+#----------------
 
