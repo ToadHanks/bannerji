@@ -1,2 +1,27 @@
-# urmojis
-a work-in-progress to trasform traits to emojis. It will be cool and useless. But that's what I do.
+Project
+-------
+urmojis (shortened for "You're Emojis")
+
+Project Description
+--------------------
+An R package to transform & plot a user traits to their emojis-equivalent
+
+Author
+-------
+Mihir Patel
+
+Status
+------
+Prototype
+
+Language
+---------
+R
+
+OS Support
+----------
+UNIX based only
+
+Packages
+----------
+igraph, rjoson
