@@ -16,7 +16,8 @@ Mihir Patel
 
 Status
 ------
-Prototype
+Experimental
+*not worthy of CRAN, believe me.*
 
 Language
 ---------
@@ -28,4 +29,4 @@ UNIX based only!
 
 Packages
 ----------
-igraph, rjoson
+igraph, rjson
