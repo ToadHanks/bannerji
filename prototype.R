@@ -1,3 +1,4 @@
+#pre-implmentation to check every function is working. Important to test before making project!
 library(rjson)
 library(igraph)
 
@@ -10,7 +11,7 @@ displayAllTraits <<- function(){
 
   tryCatch(
     expr = {
-      emoji_json_file <- "https://raw.githubusercontent.com/ToadHanks/urmojis/master/traitslib/mytraits.json" #link
+      emoji_json_file <- "https://raw.githubusercontent.com/opendatasurgeon/bannerji/master/traitslib/mytraits.json" #link
       json_data <- rjson::fromJSON(base::paste(base::readLines(emoji_json_file), collapse = "")) #read line by line make
       emo_lib <- base::unlist(base::lapply(json_data,function(x){ x$char })) #unlisted json
       return(base::data.frame(TRAITS= base::names(emo_lib),EMOJI= base::unname(emo_lib)))
@@ -38,7 +39,7 @@ displayAllTraits <<- function(){
 get_emoji_from_traits <<- function(a_trait) {
   tryCatch(
     expr = {
-      emoji_json_file <- "https://raw.githubusercontent.com/ToadHanks/urmojis/master/traitslib/mytraits.json" 
+      emoji_json_file <- "https://raw.githubusercontent.com/opendatasurgeon/bannerji/master/traitslib/mytraits.json" 
       json_data <- rjson::fromJSON(base::paste(base::readLines(emoji_json_file), collapse = "")) 
       
       vector_of_emoji_names_and_characters <- base::unlist(base::lapply(json_data, function(x){ x$char }))
@@ -124,7 +125,7 @@ traitsLookup <<- function(){
   
   base::tryCatch(
     expr = {
-      emoji_json_file <- "https://raw.githubusercontent.com/ToadHanks/urmojis/master/traitslib/mytraits.json"
+      emoji_json_file <- "https://raw.githubusercontent.com/opendatasurgeon/bannerji/master/traitslib/mytraits.json"
       json_data <- rjson::fromJSON(base::paste(base::readLines(emoji_json_file), collapse = "")) 
       
       emo_lib <- base::unlist(base::lapply(json_data,function(x){ x$char }))
