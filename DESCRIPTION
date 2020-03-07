@@ -1,0 +1,14 @@
+Package: bannerji
+Title: Create a personal emoji banner with your 4 unique traits
+Version: 0.5.0
+Author: Mihir Patel <mihirp161@gmail.com>
+Maintainer: Mihir Patel <mihirp161@gmail.com>
+Description: You have access to three functions, one to lookup all of the traits and their corresponding emojis. Second function is to prompt you to put keywords to give you a proper traints, and third to plot a banner of 4 emoticons which match your traits.
+License: MIT
+Encoding: UTF-8
+Depends: R (>= 3.6.0)
+Imports: 
+    igraph,
+    rjson
+LazyData: true
+RoxygenNote: 7.0.2
