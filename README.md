@@ -31,6 +31,6 @@ Caution
 --------
 Emoji rendering is not possible at the moment in Windows OS due to their UTF-8 encoding issues
 
-Packages
+Imported Packages
 ----------
 igraph, rjson
