@@ -7,17 +7,17 @@
 #' @return a dataframe whose one column in traits, another is their emoticon relator; can be saved in an object
 #'
 #' @examples
-#' displayAllTraits(takes= NULL)
+#' displayAllTraits(takes= NA)
 #'
 #' @importFrom rjson fromJSON
 #' @export
-displayAllTraits <- function(takes= NULL){
-
+displayAllTraits <- function(takes= NA){
+  
   tryCatch(
     expr = {
-      emoji_json_file <- "https://raw.githubusercontent.com/ToadHanks/urmojis/master/traitslib/mytraits.json"
-      json_data <- fromJSON(paste(readLines(emoji_json_file), collapse = ""))
-      emo_lib <- unlist(lapply(json_data,function(x){ x$char }))
+      emoji_json_file <- "https://raw.githubusercontent.com/opendatasurgeon/bannerji/master/traitslib/mytraits.json" 
+      json_data <- fromJSON(paste(readLines(emoji_json_file), collapse = "")) 
+      emo_lib <- unlist(lapply(json_data,function(x){ x$char })) 
       return(data.frame(TRAITS= names(emo_lib),EMOJI= unname(emo_lib)))
     },
     error = function(e){
@@ -25,11 +25,11 @@ displayAllTraits <- function(takes= NULL){
       print(e)
     },
     warning = function(w){
-      message("Caught an warning, but it is okay.")
+      message("Caught a warning, but it is okay.")
       print(w)
     },
     finally = {
       message("All done, quitting.")
     }
-  )
+  )    
 }

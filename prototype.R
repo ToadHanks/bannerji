@@ -6,192 +6,191 @@ mytraits <- c("happy", "angel", "curious", "american")
 
 #------------------------------------------------------------------- Viewer---------------------------------------
 #The diplay/view function wrapped
-displayAllTraits <<- function(){
+displayAllTraits <- function(takes= NA){
 
-  tryCatch(
-    expr = {
-      emoji_json_file <- "https://raw.githubusercontent.com/opendatasurgeon/bannerji/master/traitslib/mytraits.json" #link
-      json_data <- rjson::fromJSON(base::paste(base::readLines(emoji_json_file), collapse = "")) #read line by line make
-      emo_lib <- base::unlist(base::lapply(json_data,function(x){ x$char })) #unlisted json
-      return(base::data.frame(TRAITS= base::names(emo_lib),EMOJI= base::unname(emo_lib)))
-    },
-    error = function(e){
-      base::message("Error. Link is down. Sorry about that :(")
-      base::print(e)
-    },
-    warning = function(w){
-      base::message("Caught an warning, but it is okay.")
-      base::print(w)
-    },
-    finally = {
-      base::message("All done, quitting.")
-    }
-  )    
-}
-#displayAllTraits()
-#Done.
-
-#------------------------------------------------------------ Traits to emojis ------------------------------------------
-
-#Helper function
-get_emoji_from_traits <<- function(a_trait) {
   tryCatch(
     expr = {
       emoji_json_file <- "https://raw.githubusercontent.com/opendatasurgeon/bannerji/master/traitslib/mytraits.json" 
-      json_data <- rjson::fromJSON(base::paste(base::readLines(emoji_json_file), collapse = "")) 
-      
-      vector_of_emoji_names_and_characters <- base::unlist(base::lapply(json_data, function(x){ x$char }))
-      
-      emoji_character <- base::unname(vector_of_emoji_names_and_characters[base::names(vector_of_emoji_names_and_characters) == a_trait])
-      return(emoji_character)
+      json_data <- fromJSON(paste(readLines(emoji_json_file), collapse = "")) 
+      emo_lib <- unlist(lapply(json_data,function(x){ x$char })) 
+      return(data.frame(TRAITS= names(emo_lib),EMOJI= unname(emo_lib)))
     },
     error = function(e){
-      base::message("Reading library is down, please try again later. Sorry :(")
-      base::print(e)
+      message("Error. Link is down. Sorry about that :(")
+      print(e)
     },
     warning = function(w){
-      base::message("Warning! Continue....")
-      base::print(w)
+      message("Caught an warning, but it is okay.")
+      print(w)
     },
     finally = {
-      base::message("")
+      message("All done, quitting.")
     }
   )    
 }
 
-plotMyTraits <- function(traits) { # add option for , plotLayout, further customizing options colour, fonts, typeface etc.
-  
-  base::message("For example: plotMyTraits(traits= c('trait1', 'trait2','trait3','trait4'), ....)")
+#displayAllTraits()
+#Done.
 
-    tryCatch(
+#------------------------------------------------------------------- A trait to emoji ---------------------------------------
+
+getEmojiFromTheTrait <- function(aTrait) {
+  
+  message("For example: getEmojiFromTheTrait(aTrait= \"Happy\")")
+  
+  tryCatch(
     expr = {
-      if(base::length(traits) != 4 | class(traits) != "character"){
+      
+      aTrait <- toupper(aTrait)
+      
+      emoji_json_file <- "https://raw.githubusercontent.com/opendatasurgeon/bannerji/master/traitslib/mytraits.json" 
+      json_data <- fromJSON(paste(readLines(emoji_json_file), collapse = "")) 
+      
+      vector_of_emoji_names_and_characters <- unlist(lapply(json_data, function(x){ x$char }))
+      
+      emoji_character <-unname(vector_of_emoji_names_and_characters[names(vector_of_emoji_names_and_characters) == aTrait])
+      
+      return(emoji_character)
+    },
+    error = function(e){
+      message("Reading library is down, please try again later. Sorry :(")
+      print(e)
+    },
+    warning = function(w){
+      message("Warning! Continue....")
+      print(w)
+    },
+    finally = {
+      message("")
+    }
+  )    
+}
+
+#getEmojiFromTheTrait("happy")
+#DONE.
+
+#------------------------------------------------------------ Many Traits to emojis ------------------------------------------
+
+plotMyTraits <- function(traits) { 
+  
+  base::message("For example: plotMyTraits(traits= c('Happy', 'Angel','Curious','American')")
+  
+  tryCatch(
+    expr = {
+      if(length(traits) != 4 | class(traits) != "character"){
         print("Please pass in only 4 unique traits, & make sure that they are all character type.")
         return(NULL)
       }
       
-      traits <- base::toupper(traits)
+      traits <- toupper(traits)
       
       dna_link <- "https://raw.githubusercontent.com/opendatasurgeon/bannerji/master/traitslib/dnastrand.json"
       emoji_bag <- c()
       
-      for(i in base::seq(traits)){
-        tryCatch(
-          expr = {
-            emoji_json_file <- "https://raw.githubusercontent.com/opendatasurgeon/bannerji/master/traitslib/mytraits.json" 
-            json_data <- rjson::fromJSON(base::paste(base::readLines(emoji_json_file), collapse = "")) 
-            
-            vector_of_emoji_names_and_characters <- base::unlist(base::lapply(json_data, function(x){ x$char }))
-            
-            emoji_character <- base::unname(vector_of_emoji_names_and_characters[base::names(vector_of_emoji_names_and_characters) == traits[i]])
-          },
-          error = function(e){
-            base::message("Reading library is down, please try again later. Sorry :(")
-            base::print(e)
-          },
-          warning = function(w){
-            base::message("Warning! Continue....")
-            base::print(w)
-          },
-          finally = {
-            base::message("")
-          }
-        )    
-        emoji_bag <- c(emoji_bag, emoji_character) #namespace here is custom function names
+      for(i in seq(traits)){
+        emoji_json_file <- "https://raw.githubusercontent.com/opendatasurgeon/bannerji/master/traitslib/mytraits.json" 
+        json_data <- fromJSON(paste(readLines(emoji_json_file), collapse = "")) 
+        
+        vector_of_emoji_names_and_characters <- unlist(lapply(json_data, function(x){ x$char }))
+        
+        emoji_character <- unname(vector_of_emoji_names_and_characters[names(vector_of_emoji_names_and_characters) == traits[i]])
+        emoji_bag <- c(emoji_bag, emoji_character) 
       }
       
-      dna_data <- rjson::fromJSON(base::paste(base::readLines(dna_link), collapse = "")) 
+      dna_data <- fromJSON(paste(readLines(dna_link), collapse = "")) 
       
-      dna_emoji <- base::unlist(base::lapply(dna_data, function(x){ x$char }))
+      dna_emoji <- unlist(lapply(dna_data, function(x){ x$char }))
       
-      dna_strand <- base::unname(dna_emoji[base::names(dna_emoji) == "DNA"])
+      dna_strand <- unname(dna_emoji[names(dna_emoji) == "DNA"])
       
-      emoji_bag <- base::rbind(emoji_bag, base::matrix(dna_strand, ncol= base::length(emoji_bag)))
+      emoji_bag <- rbind(emoji_bag, matrix(dna_strand, ncol= length(emoji_bag)))
       emoji_bag <- c(emoji_bag)
-      emoji_bag <- base::as.character(base::rev(emoji_bag))
-      emo_mat <- base::matrix(emoji_bag, ncol = 2, byrow= T)
-      links <-  base::data.frame(from = emo_mat[,1], to = emo_mat[,2])
+      emoji_bag <- as.character(rev(emoji_bag))
+      emo_mat <- matrix(emoji_bag, ncol = 2, byrow= T)
+      links <-  data.frame(from = emo_mat[,1], to = emo_mat[,2])
       
-      emogg <- igraph::graph_from_data_frame(links, directed = T)
+      emogg <- graph_from_data_frame(links, directed = T)
       
-      igraph::V(emogg)$size <- 1
-      igraph::V(emogg)$color <- "gray"
-      igraph::V(emogg)$frame.color <- "ghostwhite"
-      igraph::E(emogg)$arrow.mode <- 0
-      isolated <- igraph::degree(igraph::simplify(emogg)) == 0
+      V(emogg)$size <- 1
+      V(emogg)$color <- "gray"
+      V(emogg)$frame.color <- "ghostwhite"
+      E(emogg)$arrow.mode <- 0
+      isolated <- degree(simplify(emogg)) == 0
       
-      base::setwd("~/Desktop")
+      setwd("~/Desktop")
       
       grDevices::png(filename = "dna.png", width= 1280, height= 720, res= 200)
-      igraph::plot.igraph(igraph::delete.vertices(igraph::simplify(emogg), isolated), vertex.label= igraph::V(emogg)$name, asp= 0, layout= igraph::layout_nicely(emogg))
+      plot.igraph(delete.vertices(simplify(emogg), isolated), vertex.label= V(emogg)$name, asp= 0, layout= layout_nicely(emogg))
       grDevices::dev.off()
       
-      base::message("mydna.png is saved to your Desktop!")
-      
+      message("mydna.png is saved to your Desktop!")
     },
     error = function(e){
-      base::message("Caught an error, check the arguments!")
-      base::print(e)
+      message("Plotting failed, check your vector, make sure you're passing characters only.")
+      print(e)
     },
     warning = function(w){
-      base::message("Caught an warning!")
-      base::print(w)
+      message("Caught a warning!")
+      print(w)
     },
-    finally = {
-      base::message("")
+    finally = { 
+      message("") 
     }
   ) 
 }
 
-plotMyTraits(mytraits)
+#plotMyTraits(mytraits)
+#Done.
 
 #-------------------------------------------------------- Recommendation ---------------------------------------
 
-traitsLookup <<- function(){
-  base::message("Please type top 4 words followed by ENTER; let's see if traits are discovered!")
+traitsLookup <- function(takes= NA){
   
-  base::tryCatch(
+  message("Please type top 4 words followed by ENTER") 
+  message("If 4 unique Traits are returned, then you're all set to plot using plotMyTraits(traits) function!!")
+  
+  tryCatch(
     expr = {
       emoji_json_file <- "https://raw.githubusercontent.com/opendatasurgeon/bannerji/master/traitslib/mytraits.json"
-      json_data <- rjson::fromJSON(base::paste(base::readLines(emoji_json_file), collapse = "")) 
+      json_data <- fromJSON(paste(readLines(emoji_json_file), collapse = "")) 
       
-      emo_lib <- base::unlist(base::lapply(json_data,function(x){ x$char }))
-      emo_lib <- base::data.frame(TRAIT= base::names(emo_lib), EMOJI= base::unname(emo_lib))
+      emo_lib <- unlist(lapply(json_data,function(x){ x$char }))
+      emo_lib <- data.frame(TRAIT= names(emo_lib), EMOJI= unname(emo_lib))
       
-      {first_key <- base::readline(prompt= "First keyword: ");
-        second_key <- base::readline(prompt= "Second keyword: ");
-        third_key <- base::readline(prompt= "Third keyword: ");
-        fourth_key <- base::readline(prompt= "Fourth keyword: ");}
+      {first_key <- readline(prompt= "First keyword: ");
+        second_key <- readline(prompt= "Second keyword: ");
+        third_key <- readline(prompt= "Third keyword: ");
+        fourth_key <- readline(prompt= "Fourth keyword: ");}
       
-      keys_bag <- base::tolower(c(first_key,second_key,third_key,fourth_key))
+      keys_bag <- tolower(c(first_key,second_key,third_key,fourth_key))
       dictionary_keywords <- c()
       
-      for(i in base::seq(keys_bag)){
-        find_keys_in_lib <- base::lapply(json_data, function(ch) base::grep(keys_bag[i], ch))
-        if(TRUE %in%base::sapply(find_keys_in_lib, function(x) base::length(x) > 0)){
-          find_truth <- base::sapply(find_keys_in_lib, function(x) base::length(x) > 0)
-          dictionary_keywords <- c(dictionary_keywords, base::names(find_truth[find_truth==TRUE]))
+      for(i in seq(keys_bag)){
+        find_keys_in_lib <- lapply(json_data, function(ch) grep(keys_bag[i], ch))
+        if(TRUE %in% sapply(find_keys_in_lib, function(x) length(x) > 0)){
+          find_truth <- sapply(find_keys_in_lib, function(x) length(x) > 0)
+          dictionary_keywords <- c(dictionary_keywords, names(find_truth[find_truth==TRUE]))
         }
       }
       
-      base::print("Traits found: ")
+      print("Traits found: ")
       return(dictionary_keywords)
     },
     error = function(e){
-      base::message("Look up failed, please type single alphabetic words.")
-      base::print(e)
+      message("Look up failed, please type single alphabetic words. one at a time.")
+      print(e)
     },
     warning = function(w){
-      base::message("Caught a warning!")
-      base::print(w)
+      message("Caught a warning!")
+      print(w)
     },
     finally = { 
-      base::message("") 
+      message("") 
     }
   ) 
+  
 }
 
 #traitsLookup()
-                                 
 #Done.
 
