@@ -9,6 +9,7 @@ You can use this to make emoji traits banner that is personal to you. Useless, b
 
 *documentation and more details will be published when done. Please hang tight :)*      
 *Initial emoji library is provided by [Muan](https://github.com/muan/emojilib)*
+*not worthy of CRAN, believe me.*
 
 Author
 -------
@@ -16,8 +17,8 @@ Mihir Patel
 
 Status
 ------
-Experimental    
-*not worthy of CRAN, believe me.*
+Done (0.1.0)
+I will  update this package as I go. Maybe.
 
 Language
 ---------
