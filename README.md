@@ -31,6 +31,10 @@ Caution
 --------
 Emoji rendering is not possible at the moment in Windows OS due to their UTF-8 encoding issues
 
+License
+--------
+MIT
+
 Imported Packages
 ----------
 igraph, rjson
