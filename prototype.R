@@ -1,4 +1,3 @@
-#pre-implmentation to check every function is working. Important to test before making project!
 library(rjson)
 library(igraph)
 
@@ -28,10 +27,9 @@ displayAllTraits <<- function(){
       base::message("All done, quitting.")
     }
   )    
-  
-
 }
 #displayAllTraits()
+#Done.
 
 #------------------------------------------------------------ Traits to emojis ------------------------------------------
 
@@ -61,23 +59,52 @@ get_emoji_from_traits <<- function(a_trait) {
   )    
 }
 
-plotMyTraits <<- function(traits) { # add option for , plotLayout, further customizing options colour, fonts, typeface etc.
+plotMyTraits <- function(traits) { # add option for , plotLayout, further customizing options colour, fonts, typeface etc.
   
   base::message("For example: plotMyTraits(traits= c('trait1', 'trait2','trait3','trait4'), ....)")
-  
-  tryCatch(
+
+    tryCatch(
     expr = {
       if(base::length(traits) != 4 | class(traits) != "character"){
         print("Please pass in only 4 unique traits, & make sure that they are all character type.")
         return(NULL)
       }
+      
       traits <- base::toupper(traits)
       
-      dna_strand <- "🧬"
+      dna_link <- "https://raw.githubusercontent.com/opendatasurgeon/bannerji/master/traitslib/dnastrand.json"
       emoji_bag <- c()
+      
       for(i in base::seq(traits)){
-        emoji_bag <- c(emoji_bag, get_emoji_from_traits(traits[i])) #namespace here is custom function names
+        tryCatch(
+          expr = {
+            emoji_json_file <- "https://raw.githubusercontent.com/opendatasurgeon/bannerji/master/traitslib/mytraits.json" 
+            json_data <- rjson::fromJSON(base::paste(base::readLines(emoji_json_file), collapse = "")) 
+            
+            vector_of_emoji_names_and_characters <- base::unlist(base::lapply(json_data, function(x){ x$char }))
+            
+            emoji_character <- base::unname(vector_of_emoji_names_and_characters[base::names(vector_of_emoji_names_and_characters) == traits[i]])
+          },
+          error = function(e){
+            base::message("Reading library is down, please try again later. Sorry :(")
+            base::print(e)
+          },
+          warning = function(w){
+            base::message("Warning! Continue....")
+            base::print(w)
+          },
+          finally = {
+            base::message("")
+          }
+        )    
+        emoji_bag <- c(emoji_bag, emoji_character) #namespace here is custom function names
       }
+      
+      dna_data <- rjson::fromJSON(base::paste(base::readLines(dna_link), collapse = "")) 
+      
+      dna_emoji <- base::unlist(base::lapply(dna_data, function(x){ x$char }))
+      
+      dna_strand <- base::unname(dna_emoji[base::names(dna_emoji) == "DNA"])
       
       emoji_bag <- base::rbind(emoji_bag, base::matrix(dna_strand, ncol= base::length(emoji_bag)))
       emoji_bag <- c(emoji_bag)
@@ -116,7 +143,7 @@ plotMyTraits <<- function(traits) { # add option for , plotLayout, further custo
   ) 
 }
 
-#plotMyTraits(mytraits)
+plotMyTraits(mytraits)
 
 #-------------------------------------------------------- Recommendation ---------------------------------------
 
@@ -167,3 +194,4 @@ traitsLookup <<- function(){
 #traitsLookup()
                                  
 #Done.
+
