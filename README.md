@@ -17,7 +17,7 @@ Mihir Patel
 
 Status
 ------
-Done (0.1.0)
+Version (0.1.0)    
 I will  update this package as I go. Maybe.
 
 Language
