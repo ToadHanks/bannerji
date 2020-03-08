@@ -117,9 +117,9 @@ plotMyTraits <- function(traits) {
       E(emogg)$arrow.mode <- 0
       isolated <- degree(simplify(emogg)) == 0
       
-      setwd("~/Desktop")
+      #setwd("~/Desktop")
       
-      grDevices::png(filename = "dna.png", width= 1280, height= 720, res= 200)
+      grDevices::png(filename = "~/Desktop/dna.png", width= 1280, height= 720, res= 200)
       plot.igraph(delete.vertices(simplify(emogg), isolated), vertex.label= V(emogg)$name, asp= 0, layout= layout_nicely(emogg))
       grDevices::dev.off()
       
