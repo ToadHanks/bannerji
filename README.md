@@ -1,3 +1,17 @@
+Install
+-------
+`````r
+devtools::install_github("opendatasurgeon/bannerji")
+library(bannerji) 
+`````
+OS Support
+----------
+UNIX based only! *(i.e. Mac OS, Linux OS etc.)*
+
+Caution
+--------
+Emoji rendering is not possible at the moment in Windows OS due to their UTF-8 encoding issues. Ignore the ````r "Rtools required to build packages..." warning in Windows.````
+
 Project
 -------
 Bannerji (shortened from "Banner Emoji")
@@ -23,14 +37,6 @@ I will  update this package as I go. Maybe.
 Language
 ---------
 R
-
-OS Support
-----------
-UNIX based only! *(i.e. Mac OS, Linux OS)*
-
-Caution
---------
-Emoji rendering is not possible at the moment in Windows OS due to their UTF-8 encoding issues
 
 Imported Packages
 ----------
