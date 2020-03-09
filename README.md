@@ -23,7 +23,7 @@ You can use this to make emoji traits banner that is personal to you. Useless, b
 
 *documentation and more details will be published when done. Please hang tight :)*          
 *Initial emoji library is provided by [Muan](https://github.com/muan/emojilib)*   
-*not worthy of CRAN, believe me.*
+*Not worthy of CRAN, believe me.*
 
 Author
 -------
