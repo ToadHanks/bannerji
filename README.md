@@ -31,8 +31,7 @@ Mihir Patel
 
 Status
 ------
-Version (0.1.0)    
-I will  update this package as I go. Maybe.
+Revising version (0.1.0)
 
 Language
 ---------
