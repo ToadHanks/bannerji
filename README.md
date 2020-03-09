@@ -10,7 +10,7 @@ UNIX based only! *(i.e. Mac OS, Linux OS etc.)*
 
 Note
 --------
-Emoji rendering is not possible at the moment in Windows OS due to their UTF-8 encoding issues. Ignore the ````r "Rtools required to build packages..." warning, if it occurs. It occurs randomly on various machines with this package.````
+Emoji rendering is not possible at the moment in Windows OS due to Windows NT/OS-2 UTF-8 encoding issues. Ignore the ````r "Rtools required to build packages..." warning, if it occurs. It occurs randomly on various machines with this package.````
 
 Project
 -------
