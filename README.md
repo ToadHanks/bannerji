@@ -43,4 +43,4 @@ igraph, rjson
 
 License
 --------
-MIT, however please follow guidelines on the licenses from packages which I've imported
+MIT
