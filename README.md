@@ -21,7 +21,7 @@ Project Description
 A micro-mini R package to transform & plot a user traits to their emoji-equivalent values.
 You can use this to make emoji traits banner that is personal to you. Useless, but still worth 10 secs. of your time.
 
-*documentation and more details are in .tar files*          
+*Documentation and more details are in .tar files*          
 *Initial emoji library was provided by [Muan](https://github.com/muan/emojilib)*   
 *Not worthy of CRAN, believe me.*
 
