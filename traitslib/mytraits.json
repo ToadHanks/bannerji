@@ -11,9 +11,93 @@
     "keywords": ["curious", "bug", "buglover", "seeker", "finder", "adventurer"],
     "char": "🐛"
   },
-  "AMERICAN": {
-    "keywords": ["american", "usa", "usflag", "americanflag", "patriot"],
-    "char": "🇺🇸"
+  "BORING": {
+    "keywords": ["bored", "unenergetic", "dull", "boring"],
+    "char": "💤"
+  },
+  "BRAGGART": {
+    "keywords": ["brags", "braggy", "bragger", "liar", "braggart"],
+    "char": "🤥"
+  },
+  "CONVERSATIONALIST": {
+    "keywords": ["talkative", "talks", "conversationalist"],
+    "char": "🦜"
+  },
+  "CRYBABY": {
+    "keywords": ["sentimental", "sensetive", "emotional", "crybaby"],
+    "char": "😭"
+  },
+  "DREAMER": {
+    "keywords": ["dreamer", "fantasizer", "goalkeeper", "fantasist"],
+    "char": "💭"
+  },
+  "GLOOMY": {
+    "keywords": ["unfortunate", "badluck", "gloomy"],
+    "char": "🌧️"
+  },
+  "RICH": {
+    "keywords": ["rich", "wealthy", "1%", "1percent", "hustler"],
+    "char": "💸"
+  },
+  "GREEDY": {
+    "keywords": ["greedy", "moneydream", "moneyislife"],
+    "char": "🤑"
+  },
+  "ENGINEER": {
+    "keywords": ["engineer", "mathguy", "technical"],
+    "char": "⚙️"
+  },
+  "HUGGER": {
+    "keywords": ["hugger", "peopleperson", "touchy"],
+    "char": "🤗"
+  },
+  "MATERIALISTIC": {
+    "keywords": ["materialistic", "thingsfirst", "materialfirst", "ilovemythings"],
+    "char": "💎"
+  },
+  "MEAN": {
+    "keywords": ["mean", "meanspirited", "sharptongue"],
+    "char": "🔪"
+  },
+  "TECHY": {
+    "keywords": ["techy", "computerexpert", "it", "computerperson", "computerscientist"],
+    "char": "💾"
+  },
+  "DATAGEEK": {
+    "keywords": ["datageek", "dataengineer", "dataanalyst", "datascientist", "dataexpert"],
+    "char": "📊"
+  },
+  "THERAPIST": {
+    "keywords": ["therapist", "doctor", "nurse", "surgeon", "healthperson"],
+    "char": "🩺"
+  },
+  "ARTIST": {
+    "keywords": ["artist", "painter", "actor", "actress", "drama", "writer", "painter"],
+    "char": "🎭"
+  },
+  "MATHEMATICIAN": {
+    "keywords": ["mathematician", "mathlover", "puzzle", "problemsolver", "numbersperson"],
+    "char": "🧮"
+  },
+  "MEXICAN": {
+    "keywords": ["mexican", "mexico", "mexicanflag"],
+    "char": "🇲🇽"
+  },
+  "CANADIAN": {
+    "keywords": ["canadian", "canada", "canadaflag", "maple"],
+    "char": "🇨🇦"
+  },
+  "PUERTORICAN": {
+    "keywords": ["puertorican", "puertoricanflag", "puertorico"],
+    "char": "🇵🇷"
+  },
+  "VETERAN": {
+    "keywords": ["veteran", "loyal", "countryfirst", "diehard", "patriot"],
+    "char": "🎖️"
+  },
+  "SCIENTIST": {
+    "keywords": ["scientist", "scienceperson", "chemist", "biologist", "pharmacist"],
+    "char": "🧪"
   }
 }
 
