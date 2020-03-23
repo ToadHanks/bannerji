@@ -36,7 +36,7 @@ Mihir Patel
 
 Status
 ------
-Working (version (0.1.0))
+Working (version (0.1.0))    
 Planned (version (0.2.0): More traits, space key support/better search tools)
 
 Language
