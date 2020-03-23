@@ -27,7 +27,7 @@ You can use this to make emoji-traits banner that is personal to you. Useless, b
 
 Example
 -------
-1) This is the output from `bannerji::plotMyTraits(c("Happy", "American", "Curious", "Angel"))`      
+1) This is an output from `bannerji::plotMyTraits(c("Happy", "American", "Curious", "Angel"))`      
 ![Image](https://github.com/opendatasurgeon/bannerji/blob/master/functionDisplay/dna.png?raw=true)
 
 Author
