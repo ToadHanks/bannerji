@@ -18,12 +18,16 @@ Emoji rendering is not possible at the moment in Windows OS due to Windows NT/OS
 
 Project Description
 --------------------
-A micro-mini R package to transform & plot a user traits to their emoji-equivalent values.
-You can use this to make emoji traits banner that is personal to you. Useless, but still worth 10 secs. of your time.
+A micro-mini R package that transforms & plots a user's traits to their emoji-equivalent values.
+You can use this to make emoji-traits banner that is personal to you. Useless, but still worth 10 seconds of your time.
 
 *Documentation and more details are in .tar files*          
 *Initial emoji library was provided by [Muan](https://github.com/muan/emojilib)*   
 *Not worthy of CRAN, believe me.*
+
+Example
+-------
+
 
 Author
 -------
