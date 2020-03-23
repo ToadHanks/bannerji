@@ -98,6 +98,10 @@
   "SCIENTIST": {
     "keywords": ["scientist", "scienceperson", "chemist", "biologist", "pharmacist"],
     "char": "🧪"
+  },
+  "AMERICAN": {
+    "keywords": ["american", "america", "usflag", "usa"],
+    "char": "🇺🇸"
   }
 }
 
