@@ -7,6 +7,8 @@ Install
 `````r
 devtools::install_github("opendatasurgeon/bannerji")
 library(bannerji) 
+
+#then enter 1 and choose to "1. ALL"
 `````
 OS Support
 ----------
@@ -14,7 +16,7 @@ UNIX based only! *(i.e. Mac OS, Linux OS etc.)*
 
 Note
 --------
-Emoji rendering is not possible at the moment in Windows OS due to Windows NT/OS-2 UTF-8 encoding issues. Ignore the `"Rtools required to build packages..."` warning, if it occurs. It occurs randomly on various machines due to several dependencies of this package.
+Emoji rendering is not possible at the moment in Windows OS due to Windows NT/OS-2 UTF-8 encoding issues. Ignore the `"Rtools required to build packages..."` warning, if it occurs. It occurs randomly on various machines due to me including binary release within same github repository.
 
 Project Description
 --------------------
