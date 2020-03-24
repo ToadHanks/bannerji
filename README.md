@@ -8,7 +8,7 @@ Install
 devtools::install_github("opendatasurgeon/bannerji")
 library(bannerji) 
 
-#then enter 1 and choose to "1. ALL"
+#then enter 1 to choose "1. ALL"
 `````
 *Not worthy of CRAN, believe me.*
 
