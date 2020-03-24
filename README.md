@@ -1,6 +1,6 @@
 Project
 -------
-Bannerji (shortened from "Banner Emoji")
+bannerji (shortened from "banner emoji")
 
 Install
 -------
