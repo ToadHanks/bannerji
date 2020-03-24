@@ -10,6 +10,8 @@ library(bannerji)
 
 #then enter 1 and choose to "1. ALL"
 `````
+*Not worthy of CRAN, believe me.*
+
 OS Support
 ----------
 UNIX based only! *(i.e. Mac OS, Linux OS etc.)*
@@ -25,7 +27,6 @@ You can use this to make emoji-traits banner that is personal to you. Useless, b
 
 *Documentation and more details are in .tar files*          
 *Initial emoji library was provided by [Muan](https://github.com/muan/emojilib)*   
-*Not worthy of CRAN, believe me.*
 
 Example
 -------
