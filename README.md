@@ -42,7 +42,7 @@ So far the package has four functions along with appropriate error notification 
     
     `> bannerji::getEmojiFromTheTrait(aTrait= "braggart")`
     ![Image](https://github.com/opendatasurgeon/bannerji/blob/master/functionOutputs/getemojifromtrait.png?raw=true)
-    `> bannerji::getEmojiFromTheTrait(aTrait= "wut??")`
+    `> bannerji::getEmojiFromTheTrait(aTrait= "wut??")`    
     `> character(0)`
 
 3) **traitsLookup(takes)** takes nothing, but prompts you for four entries. In these entries you can search for traits to match you perfectly with YOUR unique traits. The traits retured is a character vector of length 4 which you can copy for plotting. 
