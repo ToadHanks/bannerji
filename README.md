@@ -64,8 +64,10 @@ Mihir Patel
 
 Status
 ------
-Working: version 0.1.0      
-Next changes: More traits, space key support/better search tools
+Working: version 0.1.0 (supports R >= 3.0, and no known conflicts with any R package.)    
+
+Next changes: ~More traits, space key support/better search tools~ 
+(Lacks potential and has no application for productivity. So this will be it sadly.)
 
 Language
 ---------
