@@ -18,7 +18,7 @@ UNIX based only! *(i.e. Mac OS, Linux OS etc.)*
 
 Note
 --------
-Emoji rendering is not possible at the moment in Windows OS due to Windows NT/OS-2 UTF-8 encoding issues. So for some emojis you may see their unicode encodings, but when you plot them with `plotMyTraits` you will see the emoji character
+Emoji rendering is not possible at the moment in Windows OS due to Windows NT/OS-2 UTF-8 encoding issues. So for some emojis you may see their unicode encodings, but when you plot them with `plotMyTraits` you will see the emoji character within the saved plot.
 
 Ignore the `"Rtools required to build packages..."` warning, if it occurs. It occurs randomly on various machines due to me including binary release within same github repository.
 
