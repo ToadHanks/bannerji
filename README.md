@@ -18,7 +18,9 @@ UNIX based only! *(i.e. Mac OS, Linux OS etc.)*
 
 Note
 --------
-Emoji rendering is not possible at the moment in Windows OS due to Windows NT/OS-2 UTF-8 encoding issues. Ignore the `"Rtools required to build packages..."` warning, if it occurs. It occurs randomly on various machines due to me including binary release within same github repository.
+Emoji rendering is not possible at the moment in Windows OS due to Windows NT/OS-2 UTF-8 encoding issues. So for some emojis you may see their unicode encodings, but when you plot them with `plotMyTraits` you will see the emoji character
+
+Ignore the `"Rtools required to build packages..."` warning, if it occurs. It occurs randomly on various machines due to me including binary release within same github repository.
 
 Project Description
 --------------------
@@ -50,7 +52,7 @@ So far the package has four functions along with appropriate error notification 
       `> bannerji::traitsLookup(takes= NA)`
       ![Image](https://github.com/opendatasurgeon/bannerji/blob/master/functionOutputs/traitslookup.png?raw=true)
 
-4) **plotMyTraits(traits)** takes a character vector of length four. This vector are your four unique traits. 
+4) **plotMyTraits(traits)** takes a character vector of length four. This vector are your four unique traits, and return a plot is made which is auto saved in your current directory. The name of the file is 'mydna.png.'
 
     `> bannerji::plotMyTraits(traits= c("Happy", "American", "Curious", "Angel"))`      
     ![Image](https://github.com/opendatasurgeon/bannerji/blob/master/functionOutputs/plotmytraits.png?raw=true)
