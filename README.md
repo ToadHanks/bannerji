@@ -52,7 +52,7 @@ So far the package has four functions along with appropriate error notification 
       `> bannerji::traitsLookup(takes= NA)`
       ![Image](https://github.com/opendatasurgeon/bannerji/blob/master/functionOutputs/traitslookup.png?raw=true)
 
-4) **plotMyTraits(traits)** takes a character vector of length four. This vector are your four unique traits, and return a plot is made which is auto saved in your current directory. The name of the file is 'mydna.png.'
+4) **plotMyTraits(traits)** takes a character vector of length four. This vector are your four unique traits, and return a plot is made which is auto saved in your current directory. The name of the file is 'dna.png.'
 
     `> bannerji::plotMyTraits(traits= c("Happy", "American", "Curious", "Angel"))`      
     ![Image](https://github.com/opendatasurgeon/bannerji/blob/master/functionOutputs/plotmytraits.png?raw=true)
