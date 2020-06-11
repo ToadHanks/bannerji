@@ -4,7 +4,7 @@ Version: 0.1.0
 Author: Mihir Patel <mihirp161@gmail.com>
 Maintainer: Mihir Patel <mihirp161@gmail.com>
 Description: You have access to four functions- displayAlltraits: Returns a list of traits and their emoji relatives; getEmojiFromTheTrait: Returns a single emoticon from a single charater trait; plotMyTraits: Takes a character vector of 4 unique traits, and saves a banner in your desktop, and traitsLookup: Looks up traits for you with your input keywords.
-License: MIT + file LICENSE
+License: CC0 + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 3.6.0)
 Imports: 
