@@ -79,4 +79,4 @@ igraph, rjson
 
 License
 --------
-MIT
+CC0
